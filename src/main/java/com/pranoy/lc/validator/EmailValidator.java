@@ -6,7 +6,7 @@ import org.springframework.validation.Validator;
 
 import com.pranoy.lc.api.UserRegistrationDTO;
 
-public class UserNameValidator implements Validator {
+public class EmailValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> clazz) {
@@ -15,11 +15,13 @@ public class UserNameValidator implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", "username.empty", "Username cant be empty");
-		String userName = ((UserRegistrationDTO) target).getUserName();
+		ValidationUtils.
+		rejectIfEmptyOrWhitespace(errors, "communicationDTO.email", "email.empty");
 		
-		if (!userName.contains("_")) {
-			errors.rejectValue("userName", "username.invalidString", "username must contain a '_'");
+		String email = ((UserRegistrationDTO) target).getCommunicationDTO().getEmail();
+		
+		if (!email.endsWith("@seliniumexpress.com")) {
+			errors.rejectValue("communicationDTO.email", "email.invalidFormat");
 		}
 	}
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pranoy.lc.api.UserRegistrationDTO;
 import com.pranoy.lc.propertyeditor.NamePropertyEditor;
+import com.pranoy.lc.validator.EmailValidator;
 import com.pranoy.lc.validator.UserNameValidator;
 
 @Controller
@@ -48,5 +49,6 @@ public class RegistrationController {
 		
 		//binder.setDisallowedFields("name");
 		binder.addValidators(new UserNameValidator());
+		binder.addValidators(new EmailValidator());
 	}
 }

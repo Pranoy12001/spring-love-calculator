@@ -57,6 +57,8 @@
 
 			<label>Email</label>
 			<form:input path="communicationDTO.email" />
+			<form:errors path="communicationDTO.email" cssClass="error"/>
+			<br/>
 
 			<label>Phone</label>
 			<form:input path="communicationDTO.phone" />

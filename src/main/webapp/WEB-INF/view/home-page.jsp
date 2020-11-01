@@ -15,11 +15,11 @@
 }
 </style>
 <script type="text/javascript">
-function validateUserName() {
+/* function validateUserName() {
 	var userName = document.getElementById("yn").value;
 	
 	if (userName.length < 3 || userName.length > 15) {
-		alert("our name must be between 3 to 15 character");
+		alert("your name must be between 3 to 15 character");
 		return false;
 	}
 	
@@ -27,7 +27,7 @@ function validateUserName() {
 	
 	return true;
 	
-}
+} */
 </script>
 </head>
 <body>
